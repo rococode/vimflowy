@@ -12,3 +12,5 @@ npm-debug.log
 
 /todo
 .DS_Store
+
+package-lock.json

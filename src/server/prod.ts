@@ -17,7 +17,8 @@ async function main(args: any) {
           -h, --help: help menu
 
           --host $hostname: Host to listen on
-          --port $portnumber: Port to run on
+          --port $portnumber: Port to run websocket (database) server on
+          --serverport $portnumber: Port to run http server on
 
           --db $dbtype: If a db is set, we will additionally run a socket server.
             Available options:
@@ -41,6 +42,7 @@ async function main(args: any) {
   const buildDir = path.join(staticDir, publicPath);
 
   let port: number = args.port || 3000;
+  let serverport: number = args.serverport || 80;
   let host: string = args.host || 'localhost';
 
   if (!fs.existsSync(buildDir)) {
@@ -60,11 +62,12 @@ async function main(args: any) {
       db: args.db,
       dbfolder: args.dbfolder,
       password: args.password,
+      port: port,
       path: '/socket',
     };
     makeSocketServer(server, options);
   }
-  server.listen(port, host, (err?: Error) => {
+  server.listen(serverport, host, (err?: Error) => {
     if (err) { return logger.error(err); }
     logger.info('Listening on http://%s:%d', server.address().address, server.address().port);
   });

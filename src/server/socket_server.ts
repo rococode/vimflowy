@@ -12,10 +12,11 @@ type SocketServerOptions = {
   dbfolder?: string,
   password?: string,
   path?: string,
+  port?: number,
 };
 
 export default function makeSocketServer(server: http.Server, options: SocketServerOptions) {
-  const wss = new WebSocket.Server({ server, path: options.path });
+  const wss = new WebSocket.Server({ port: options.port, path: options.path });
 
   const dbs: {[docname: string]: DataBackend} = {};
   const clients: {[docname: string]: string} = {};
