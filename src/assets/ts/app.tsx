@@ -67,7 +67,6 @@ ReactDOM.render(
       color: '#999',
     }}>
       <i className='fa fa-5x fa-spin fa-spinner'/>
-      <p>Loading... this can take a minute the first time</p>
     </div>
     <div style={{ flexGrow: 8 }}/>
   </div>,
