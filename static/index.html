@@ -7,6 +7,13 @@
         <meta name="mobile-web-app-capable" content="yes">
         <script src="lib/forge-sha256.js"></script>
         <script>
+            // redundant with autofocus but it doesn't hurt
+            window.onload = function () {
+                let input = document.getElementById("pass");
+                input.select();
+                input.focus();
+            };
+
             function load() {
                 let input = document.getElementById("pass");
                 var hashed = forge_sha256(input.value);
@@ -46,7 +53,7 @@
 
             .pre-block {
                 position: fixed;
-                top: 20vh;
+                top: 30vh;
                 left: 0;
                 right: 0;
                 font-size: 1.0rem;
@@ -54,15 +61,15 @@
             }
 
             .pre-block img {
-                height: 20vh;
+                height: 15vh;
             }
 
             .pre-block input {
                 display: block;
                 margin: 0 auto;
-                height: 3vh;
-                width: 30vh;
-                font-size: 2vh;
+                height: 2vh;
+                width: 20vh;
+                font-size: 1.5vh;
                 text-align: center;
                 padding: 2px 10px;
                 border: 1px solid #DB2764;

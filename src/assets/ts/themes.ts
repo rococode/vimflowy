@@ -81,6 +81,22 @@ const colors = {
 };
 
 export const themes: {[key: string]: Theme} = {
+  'rococo': {
+    'theme-bg-primary': 'FBFCF7',
+    'theme-bg-secondary': '#aaaaaa',
+    'theme-bg-tertiary': '#e0e0e0',
+    'theme-bg-highlight': '#ccc', // '#ffa' for yellowish
+
+    'theme-text-primary': colors.black,
+    'theme-text-accent': '#dd3388',
+    'theme-text-link': '#8888ff',
+
+    'theme-trim': colors.black,
+    'theme-trim-accent': '#dd3388',
+
+    'theme-text-cursor': colors.white,
+    'theme-bg-cursor': '#666',
+  },
   'Default': {
     'theme-bg-primary': colors.white,
     'theme-bg-secondary': '#aaaaaa',
