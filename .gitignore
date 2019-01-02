@@ -14,7 +14,6 @@ npm-debug.log
 .DS_Store
 
 .idea/
-package-lock.json
 lala-orig.png
 gfx/
 sync.sh
