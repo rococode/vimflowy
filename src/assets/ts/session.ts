@@ -1335,6 +1335,20 @@ export default class Session extends EventEmitter {
 
     this.emit('scroll', numlines);
   }
+
+  public async centerOnCursor() {
+    let view = document.getElementById('view');
+    let cursors = document.getElementsByClassName('cursor');
+    if (view && cursors && cursors.item(0)) {
+      let cursor = cursors.item(0);
+      if (cursor) {
+        let scrollDist = cursor.getBoundingClientRect().top;
+        scrollDist -= view.getBoundingClientRect().height / 2;
+        scrollDist -= cursor.getBoundingClientRect().height / 2;
+        view.scrollBy(0, scrollDist);
+      }
+    }
+  }
 }
 
 export class InMemorySession extends Session {

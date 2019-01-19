@@ -498,6 +498,15 @@ keyDefinitions.registerAction(new Action(
   { sequence: SequenceAction.DROP },
 ));
 
+keyDefinitions.registerAction(new Action(
+  'center-cursor',
+  'Center the screen vertically on the cursor',
+  async function({ session }) {
+    await session.centerOnCursor();
+  },
+  { sequence: SequenceAction.DROP },
+));
+
 // for everything but normal mode
 keyDefinitions.registerAction(new Action(
   'exit-mode',

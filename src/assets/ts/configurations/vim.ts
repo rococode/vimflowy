@@ -95,6 +95,7 @@ export const NORMAL_MODE_MAPPINGS: HotkeyMapping = Object.assign({
   'split-line': [['K']],
   'scroll-down': [['page down'], ['ctrl+d']],
   'scroll-up': [['page up'], ['ctrl+u']],
+  'center-cursor': [['-', '-']],
   'undo': [['u']],
   'redo': [['ctrl+r']],
   'replay-command': [['.']],
