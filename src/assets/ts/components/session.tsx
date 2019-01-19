@@ -213,7 +213,7 @@ export default class SessionComponent extends React.Component<Props, State> {
 
     // TODO: have an extra breadcrumb indicator when not at viewRoot?
     return (
-      <div>
+      <div style={{paddingBottom: '50vh'}}>
         {
           (() => {
             if (viewRoot.isRoot()) {
